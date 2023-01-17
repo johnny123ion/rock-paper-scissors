@@ -79,4 +79,10 @@ function game() {
 
     console.log(`Round: ${i + 1}\nPlayer Score: ${playerScore}\nComputer Score: ${computerScore}`)
   }
+
+  if (playerScore > computerScore) {
+    console.log('You won the game!');
+  } else {
+    console.log('You lost the game!');
+  }
 };

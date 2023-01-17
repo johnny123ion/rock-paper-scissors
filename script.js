@@ -51,5 +51,32 @@ function playRound() {
     result = "You didn't enter 'Rock', 'Paper' or 'Scissors'";
   
   };
+
+  console.log(result);
+
   return result;
+};
+
+
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+
+  for (i = 0; i < 5; i++) {
+    let roundWinner = playRound();
+    
+    if ((roundWinner == 'You win! Paper beats Rock') || (roundWinner == 'You win! Scissors beats Paper') || (roundWinner == 'You win! Rock beats Scissors')) {
+      playerScore++;
+
+    } else if ((roundWinner == 'You lose! Paper beats Rock') || (roundWinner == 'You lose! Scissors beats Paper') || (roundWinner == 'You lose! Rock beats Scissors')) {
+      computerScore++;
+
+    } else if (roundWinner == 'Tie!') {
+      i--;
+    } else {
+      i--;
+    }
+
+    console.log(`Round: ${i + 1}\nPlayer Score: ${playerScore}\nComputer Score: ${computerScore}`)
+  }
 };
